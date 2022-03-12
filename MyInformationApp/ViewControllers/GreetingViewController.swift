@@ -11,10 +11,10 @@ class GreetingViewController: UIViewController {
 
     @IBOutlet var greetingLabel: UILabel!
     
-    var user = "who?"
+    let user = Person.getPersons()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        greetingLabel.text = "Welcome, \(user)!"
+        greetingLabel.text = "Welcome, \(user.name) \(user.surname)"
     }
 }

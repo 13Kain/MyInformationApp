@@ -15,15 +15,6 @@ class LoginViewController: UIViewController {
     private let login = "admin"
     private let password = "admin"
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let greetingVC = segue.destination as? GreetingViewController else { return }
-        greetingVC.user = login
-    }
-    
     @IBAction func loginButtonPressed() {
         guard loginTextField.text == login, passwordTextField.text == password else {
             showAlert(

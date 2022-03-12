@@ -50,11 +50,17 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Forgot login?"/>
+                                                <connections>
+                                                    <action selector="showAuthorizationData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="063-Jf-pBa"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xS9-K2-gDD">
                                                 <rect key="frame" x="98" y="0.0" width="123" height="30"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Forgot password?"/>
+                                                <connections>
+                                                    <action selector="showAuthorizationData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Rq-Go-ssA"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -78,7 +84,7 @@
             </objects>
             <point key="canvasLocation" x="39" y="83"/>
         </scene>
-        <!--Greeting View Controller-->
+        <!--Home-->
         <scene sceneID="uvQ-Kv-OQc">
             <objects>
                 <viewController id="6l0-E1-Q8M" customClass="GreetingViewController" customModule="MyInformationApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -113,7 +119,7 @@
                             <constraint firstItem="S06-Kf-s9o" firstAttribute="centerX" secondItem="PYL-AN-M4m" secondAttribute="centerX" id="e8o-cQ-dvc"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" id="7ES-V6-cIa"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="7ES-V6-cIa"/>
                     <connections>
                         <outlet property="greetingLabel" destination="zRr-ob-ZPU" id="Iaz-t5-tUJ"/>
                     </connections>
@@ -123,21 +129,29 @@
             </objects>
             <point key="canvasLocation" x="38" y="880"/>
         </scene>
-        <!--Item-->
+        <!--About Me View Controller-->
         <scene sceneID="tdq-45-V4n">
             <objects>
                 <viewController id="qGt-Gp-2sa" customClass="AboutMeViewController" customModule="MyInformationApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Jn-J0-8nh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6yR-hc-AhI">
+                                <rect key="frame" x="112" y="44" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="DyB-xs-KmU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="9hq-zv-sux"/>
+                    <navigationItem key="navigationItem" id="OOo-Qw-45x"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WGR-4X-Lrr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="821" y="880"/>
+            <point key="canvasLocation" x="1816.875" y="879.92957746478874"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="J0h-re-Ysb">
@@ -145,20 +159,44 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="fJc-LU-iIK" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bR7-aB-vrg">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" systemColor="labelColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="6l0-E1-Q8M" kind="relationship" relationship="viewControllers" id="fjh-RY-DyY"/>
-                        <segue destination="qGt-Gp-2sa" kind="relationship" relationship="viewControllers" id="o1j-ff-gNv"/>
+                        <segue destination="hmQ-ja-EmY" kind="relationship" relationship="viewControllers" id="o1j-ff-gNv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XcE-rY-FP1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="821.25" y="81.338028169014081"/>
         </scene>
+        <!--About me-->
+        <scene sceneID="WrK-LU-6t2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hmQ-ja-EmY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="About me" id="9hq-zv-sux"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dcm-FJ-ft2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qGt-Gp-2sa" kind="relationship" relationship="rootViewController" id="2dB-vK-XAb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t6x-fA-Nwn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="819.375" y="879.92957746478874"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
