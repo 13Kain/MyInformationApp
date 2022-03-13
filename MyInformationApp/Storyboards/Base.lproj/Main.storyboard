@@ -129,7 +129,7 @@
             </objects>
             <point key="canvasLocation" x="38" y="880"/>
         </scene>
-        <!--About Me View Controller-->
+        <!--About me-->
         <scene sceneID="tdq-45-V4n">
             <objects>
                 <viewController id="qGt-Gp-2sa" customClass="AboutMeViewController" customModule="MyInformationApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -137,21 +137,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6yR-hc-AhI">
-                                <rect key="frame" x="112" y="44" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABQ-Tj-xRw">
+                                <rect key="frame" x="16" y="72" width="288" height="162.5"/>
+                                <string key="text">My name is Nikita Yashin. I am 33 years old. I have been interested in Python programming for the last 6 months. I came across several videos on Youtube where people told how they became mobile developers. I decided to try myself in this business, so I became a part of Swiftbook.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DyB-xs-KmU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ABQ-Tj-xRw" firstAttribute="leading" secondItem="DyB-xs-KmU" secondAttribute="leading" constant="16" id="6Po-c2-CT8"/>
+                            <constraint firstItem="DyB-xs-KmU" firstAttribute="trailing" secondItem="ABQ-Tj-xRw" secondAttribute="trailing" constant="16" id="9gr-nF-xB3"/>
+                            <constraint firstItem="ABQ-Tj-xRw" firstAttribute="top" secondItem="DyB-xs-KmU" secondAttribute="top" constant="28" id="wkN-ur-fyF"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="OOo-Qw-45x"/>
+                    <navigationItem key="navigationItem" title="About me" id="OOo-Qw-45x">
+                        <barButtonItem key="backBarButtonItem" title="dsd" id="J8H-hq-KHD"/>
+                        <barButtonItem key="rightBarButtonItem" title="More" id="1mt-xc-zCE">
+                            <connections>
+                                <segue destination="Ajs-I5-JD8" kind="presentation" id="58H-lJ-nsP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WGR-4X-Lrr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1816.875" y="879.92957746478874"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="BI9-UG-yfD">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="Ajs-I5-JD8" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lDt-5K-VJg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="184" translatesAutoresizingMaskIntoConstraints="NO" id="nCg-CW-WWY">
+                                <rect key="frame" x="117" y="129.5" width="86" height="309.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9YO-zt-UyJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="86" height="95.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ti-ft-ar1">
+                                        <rect key="frame" x="0.0" y="279.5" width="86" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Done"/>
+                                        <connections>
+                                            <segue destination="iHL-Mm-uPW" kind="unwind" unwindAction="unwindFor:" id="6hf-pO-DEr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="l2h-sI-uqg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nCg-CW-WWY" firstAttribute="centerX" secondItem="lDt-5K-VJg" secondAttribute="centerX" id="48h-Ra-2UU"/>
+                            <constraint firstItem="nCg-CW-WWY" firstAttribute="centerY" secondItem="lDt-5K-VJg" secondAttribute="centerY" id="h4X-ZF-qW9"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vo7-jI-yN2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="iHL-Mm-uPW" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2595" y="879.92957746478874"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="J0h-re-Ysb">
@@ -162,6 +216,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                         <color key="barTintColor" systemColor="labelColor"/>
                     </tabBar>
                     <connections>
@@ -190,7 +245,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t6x-fA-Nwn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="819.375" y="879.92957746478874"/>
+            <point key="canvasLocation" x="975" y="880"/>
         </scene>
     </scenes>
     <resources>

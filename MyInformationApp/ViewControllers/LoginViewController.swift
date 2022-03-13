@@ -27,7 +27,9 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func showAuthorizationData(_ sender: UIButton) {
-        sender.tag == 1 ? showAlert(title: "Hack me", message: "Your name is \(login)") : showAlert(title: "Hack me", message: "Your password is \(password)")
+        sender.tag == 1
+        ? showAlert(title: "Hack me", message: "Your name is \(login)")
+        : showAlert(title: "Hack me", message: "Your password is \(password)")
     }
     
     @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
